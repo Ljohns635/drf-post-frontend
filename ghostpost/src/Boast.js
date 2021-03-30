@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Card, ListGroupItem, ListGroup } from 'react-bootstrap';
 
 function Boast() {
     const [boast, setBoast] = useState([])
@@ -12,14 +13,21 @@ function Boast() {
         <>
         <h1>Boast View</h1>
         {boast.map((s) => (
-        <ul key="{s}">
-          <li><strong>Post type:</strong> {s.post_type}</li>
-          <li><strong>Post:</strong> {s.post}</li>
-          <li><strong>Upvote:</strong> {s.upvote}</li>
-          <li><strong>Downvote:</strong> {s.downvote}</li>
-          <li><strong>Created at:</strong> {s.created_at}</li>
-          <li><strong>Vote total:</strong> {s.total_votes}</li>
-        </ul>
+        <Card style={{ width: "18rem" }}>
+          <Card.Img variant="top" src="https://ww1.prweb.com/prfiles/2011/04/08/4931374/finallogo.jpg" />
+          <Card.Body>
+            <Card.Title>{s.post_type}</Card.Title>
+          </Card.Body>
+          <ListGroup className="list-group-flush">
+            <ListGroupItem>{s.post}</ListGroupItem>
+            <ListGroupItem>Created at: {s.created_at}</ListGroupItem>
+            <ListGroupItem>Total: {s.total_votes}</ListGroupItem>
+          </ListGroup>
+          <Card.Body>
+            <Card.Link href="#">Upvote: {s.upvote}</Card.Link>
+            <Card.Link href="#">Downvote: {s.downvote}</Card.Link>
+          </Card.Body>
+        </Card>
       ))}
         </>
     )
