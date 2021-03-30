@@ -11,14 +11,24 @@ function Create() {
   const url = "http://127.0.0.1:8000/api/ghostpost/";
 
   const onSubmit = (e) => {
-    // e.preventDefault()
     fetch(url, {
       method: "POST",
-      body: JSON.stringify({ create }),
+      body: JSON.stringify(create),
       headers: { "Content-Type": "application/json" },
     })
       .then((res) => res.json())
       .then((json) => setCreate(json.create));
+  };
+
+  const onHandleChange = (e) => {
+    // console.log(e.target.name)
+    e.preventDefault()
+    const value = e.target.value;
+    setCreate({
+      ...create,
+      [e.target.name]: value,
+    });
+    console.log(value);
   };
 
   return (
@@ -31,6 +41,7 @@ function Create() {
             type="text"
             name="post"
             ref={register({ required: "TEXT REQUIRED", maxLength: 280 })}
+            onChange={onHandleChange}
             placeholder="Write a roast or boast..."
           />
           {errors.text && <p>{errors.text.message}</p>}
@@ -41,6 +52,7 @@ function Create() {
             as="select"
             name="post_type"
             ref={register({ required: "SELECTION REQUIRED" })}
+            onChange={onHandleChange}
           >
             <option>Boast</option>
             <option>Roast</option>
