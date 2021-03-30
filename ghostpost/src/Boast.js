@@ -21,7 +21,7 @@ function Boast() {
           <ListGroup className="list-group-flush">
             <ListGroupItem>{s.post}</ListGroupItem>
             <ListGroupItem>Created at: {s.created_at}</ListGroupItem>
-            <ListGroupItem>Total: {s.total_votes}</ListGroupItem>
+            <ListGroupItem>Total: {s.upvote - s.downvote}</ListGroupItem>
           </ListGroup>
           <Card.Body>
             <Card.Link href="#">Upvote: {s.upvote}</Card.Link>
