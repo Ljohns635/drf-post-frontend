@@ -11,7 +11,16 @@ function Home() {
       .then((data) => setPost(data));
   }, []);
 
-  const [count, setCount] = useState(0);
+  const onHandleSubmit = (e) => {
+    e.preventDefault()
+    // fetch("http://127.0.0.1:8000/api/ghostpost/upvote/", {
+    //   method: "POST",
+    //   body: JSON.stringify({ post }),
+    //   headers: { "Content-Type": "application/json" },
+    // })
+    //   .then((res) => res.json())
+    //   .then((json) => setPost(json.post));
+  };
   return (
     <>
       <Jumbotron>
@@ -33,8 +42,8 @@ function Home() {
           </ListGroup>
           <Card.Body>
             <Card.Text>
-              <button onClick={() => setCount(count + 1)}>Upvote: </button>
-              {count + s.upvote}
+              <button onClick={onHandleSubmit}>Upvote: </button>
+              {s.upvote}
             </Card.Text>
             <Card.Text>Downvote: {s.downvote}</Card.Text>
           </Card.Body>
