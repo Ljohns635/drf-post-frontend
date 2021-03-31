@@ -9,7 +9,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 function App() {
   return (
     <Router>
-      <div className="container">
+      <div className="container-fluid">
         <Navigation />
         <Switch>
           <Route path="/" exact component={Home} />

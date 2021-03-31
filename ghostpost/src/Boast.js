@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Card, ListGroupItem, ListGroup } from "react-bootstrap";
+import { Card, ListGroupItem, ListGroup, Jumbotron } from "react-bootstrap";
 
 function Boast() {
   const [boast, setBoast] = useState([]);
@@ -11,10 +11,12 @@ function Boast() {
   }, []);
   return (
     <>
-      <h1>Boast View</h1>
+      <Jumbotron fluid className="text-white text-center header-image">
+          <h1 style={{ fontSize: "60px"}}>Boast</h1>
+      </Jumbotron>
       <div className="flexbox-container">
         {boast.map((s) => (
-          <Card style={{ width: "18rem" }}>
+          <Card className="post" style={{ width: "18rem" }}>
             <Card.Img
               variant="top"
               src="https://ww1.prweb.com/prfiles/2011/04/08/4931374/finallogo.jpg"
@@ -33,6 +35,9 @@ function Boast() {
             </Card.Body>
           </Card>
         ))}
+      </div>
+      <div class="card-footer text-center bg-light">
+        Copyright &copy; Latisha Johnson
       </div>
     </>
   );

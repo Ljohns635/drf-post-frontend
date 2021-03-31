@@ -1,8 +1,27 @@
+* {
+    font-family: 'Roboto Condensed', sans-serif;
+    box-sizing: border-box;
+}
+
 .flexbox-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    column-gap: 11%;
-    row-gap: 4%;
+    /* display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    column-gap: 7%;
+    row-gap: 2%;
+    width: 25%; */
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+.post {
+    order: 5;
+    margin-bottom: 20px;
+    box-shadow: 10px 10px 5px #aaaaaa;
+}
+
+.flex .post:nth-child(2) {
+  margin-left: 1em;
 }
 
 .left {
@@ -11,5 +30,16 @@
 
 .right {
     float: right;
+}
+
+.header-image {
+    background: url('https://img.freepik.com/free-photo/black-texture_1205-327.jpg?size=626&ext=jpg');
+    background-position: center;
+    background-size: cover;
+    box-shadow: 10px 10px 5px #aaaaaa;
+}
+
+h1 {
+    text-shadow: 2px 2px 8px #fff;
 }
 

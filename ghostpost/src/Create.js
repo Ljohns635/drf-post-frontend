@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-import { Form, Button } from "react-bootstrap";
+import { Form, Button, Jumbotron } from "react-bootstrap";
 
 function Create() {
   const { register, handleSubmit, errors } = useForm();
@@ -41,7 +41,9 @@ function Create() {
 
   return (
     <>
-      <h1>Create View</h1>
+      <Jumbotron fluid className="text-white text-center header-image">
+          <h1 style={{ fontSize: "60px"}}>Create Post</h1>
+      </Jumbotron>
       <Form onSubmit={handleSubmit(onSubmit)}>
         <Form.Group>
           <Form.Label>Post:</Form.Label>
@@ -72,6 +74,9 @@ function Create() {
         </Button>
         {/* <Button onClick={handleReset}>Reset</Button> */}
       </Form>
+      <div class="card-footer text-center p-3 my-3 bg-light">
+        Copyright &copy; Latisha Johnson
+      </div>
     </>
   );
 }
