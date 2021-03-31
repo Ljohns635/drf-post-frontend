@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Card, ListGroupItem, ListGroup, Jumbotron } from "react-bootstrap";
+import { Card, ListGroupItem, ListGroup, Jumbotron, Button } from "react-bootstrap";
 import "./Home.css";
 
 function Home() {
@@ -44,9 +44,9 @@ function Home() {
       <Jumbotron>
         <h1>Home View</h1>
       </Jumbotron>
-      <div className="flexbox-contai">
+      <div className="flexbox-container">
       {post.map((s) => (
-        <Card  className="post" style={{ width: "18rem" }}>
+        <Card style={{ width: "18rem" }}>
           <Card.Img
             variant="top"
             src="https://ww1.prweb.com/prfiles/2011/04/08/4931374/finallogo.jpg"
@@ -60,13 +60,14 @@ function Home() {
             <ListGroupItem>Total: {s.upvote - s.downvote}</ListGroupItem>
           </ListGroup>
           <Card.Body>
-            <Card.Text>
-              <button onClick={onHandleUpvote(s.id)}>Upvote: </button>
+            <Card.Link>
+              <Button onClick={onHandleUpvote(s.id)}>Upvote: </Button>
               {s.upvote}
-            </Card.Text>
-            <Card.Text><button onClick={onHandleDownvote(s.id)}>Downvote: </button>
+            </Card.Link>
+            <Card.Link>
+              <Button onClick={onHandleDownvote(s.id)}>Downvote: </Button>
               {s.downvote}
-            </Card.Text>
+            </Card.Link>
           </Card.Body>
         </Card>
       ))}

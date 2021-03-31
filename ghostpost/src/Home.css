@@ -1,2 +1,15 @@
+.flexbox-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 11%;
+    row-gap: 4%;
+}
 
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
 
