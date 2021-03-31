@@ -19,10 +19,9 @@ function Create() {
       .then((res) => res.json())
       .then((json) => setCreate(json.create));
   };
-
+  // recieved help from Elizabeth S because my targets were picking up on the same value
   const onHandleChange = (e) => {
     // console.log(e.target.name)
-    e.preventDefault()
     const value = e.target.value;
     setCreate({
       ...create,
@@ -30,6 +29,15 @@ function Create() {
     });
     console.log(value);
   };
+
+  // const handleReset = (e) => {
+  //   e.preventDefault();
+  //   setCreate({
+  //     ...create,
+  //     post: "",
+  //     post_type: "",
+  //   });
+  // };
 
   return (
     <>
@@ -62,6 +70,7 @@ function Create() {
         <Button variant="primary" type="submit">
           Submit
         </Button>
+        {/* <Button onClick={handleReset}>Reset</Button> */}
       </Form>
     </>
   );
