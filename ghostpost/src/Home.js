@@ -25,7 +25,7 @@ function Home() {
     // console.log(id)
     setCount({
           ...count,
-          count: count.post + 1,
+          count: count + 1,
     })
     fetch(`http://127.0.0.1:8000/api/ghostpost/${id}/upvote/`, {
       method: "POST",
@@ -44,7 +44,7 @@ function Home() {
     // console.log(id)
     setCount({
           ...count,
-          count: count.post + 1,
+          count: count + 1,
     })
     fetch(`http://127.0.0.1:8000/api/ghostpost/${id}/downvote/`, {
       method: "POST",
