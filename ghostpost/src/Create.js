@@ -10,14 +10,29 @@ function Create() {
   });
   const url = "http://127.0.0.1:8000/api/ghostpost/";
 
+  // const onSubmit = (e) => {
+  //   fetch(url, {
+  //     method: "POST",
+  //     body: JSON.stringify(create),
+  //     headers: { "Content-Type": "application/json" },
+  //   })
+  //     .then((res) => res.json())
+  //     .then((json) => setCreate(json.create))
+  //     .catch((e) => console.error(e));
+  // };
   const onSubmit = (e) => {
     fetch(url, {
       method: "POST",
-      body: JSON.stringify(create),
       headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(create),
     })
       .then((res) => res.json())
-      .then((json) => setCreate(json.create));
+      .then((data) => {
+        console.log('Success:', data);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   };
   // recieved help from Elizabeth S because my targets were picking up on the same value
   const onHandleChange = (e) => {
@@ -29,15 +44,6 @@ function Create() {
     });
     console.log(value);
   };
-
-  // const handleReset = (e) => {
-  //   e.preventDefault();
-  //   setCreate({
-  //     ...create,
-  //     post: "",
-  //     post_type: "",
-  //   });
-  // };
 
   return (
     <>
