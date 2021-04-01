@@ -49,7 +49,7 @@ If you haven't already, please include a link to your backend repo at the bottom
 
 For example:
 ```
-https://github.com/kenzie-se-q4/drf-plus-react-equals-love-backend-<github_username>
+https://github.com/kenzie-se-q4/drf-plus-react-equals-love-backend-Ljohns635
 ```
 
 After doing so, you're ready to submit a link to the frontend repo on Canvas.
