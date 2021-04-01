@@ -23,30 +23,45 @@ function Home() {
   // Recieved help from my facilitator Elizabeth S with my upvote and downvote
   const onHandleUpvote = (id) => (e) => {
     // console.log(id)
+    setCount({
+          ...count,
+          count: count.post + 1,
+    })
     fetch(`http://127.0.0.1:8000/api/ghostpost/${id}/upvote/`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
     })
       .then((res) => res.json())
-      .then((data) =>
-        setCount({
-          count: count + 1,
-        })
-      );
+      .then((data) => {
+        console.log('Success:', data);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   };
 
   const onHandleDownvote = (id) => (e) => {
     // console.log(id)
+    setCount({
+          ...count,
+          count: count.post + 1,
+    })
     fetch(`http://127.0.0.1:8000/api/ghostpost/${id}/downvote/`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
     })
       .then((res) => res.json())
-      .then((data) =>
-        setCount({
-          count: count + 1,
-        })
-      );
+      // .then((data) =>
+      //   setCount({
+      //     count: count + 1,
+      //   })
+      // );
+      .then((data) => {
+        console.log('Success:', data);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   };
 
   return (

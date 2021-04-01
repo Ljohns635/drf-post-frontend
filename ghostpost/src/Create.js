@@ -10,23 +10,13 @@ function Create() {
   });
   const url = "http://127.0.0.1:8000/api/ghostpost/";
 
-  // const onSubmit = (e) => {
-  //   fetch(url, {
-  //     method: "POST",
-  //     body: JSON.stringify(create),
-  //     headers: { "Content-Type": "application/json" },
-  //   })
-  //     .then((res) => res.json())
-  //     .then((json) => setCreate(json.create))
-  //     .catch((e) => console.error(e));
-  // };
   const onSubmit = (e) => {
     fetch(url, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(create),
     })
-      .then((res) => res.json())
+      .then((response) => response.json())
       .then((data) => {
         console.log('Success:', data);
       })
@@ -36,13 +26,12 @@ function Create() {
   };
   // recieved help from Elizabeth S because my targets were picking up on the same value
   const onHandleChange = (e) => {
-    // console.log(e.target.name)
     const value = e.target.value;
     setCreate({
       ...create,
       [e.target.name]: value,
     });
-    console.log(value);
+    // console.log(value);
   };
 
   return (
@@ -78,7 +67,6 @@ function Create() {
         <Button variant="primary" type="submit">
           Submit
         </Button>
-        {/* <Button onClick={handleReset}>Reset</Button> */}
       </Form>
       <div class="card-footer text-center p-3 my-3 bg-light">
         Copyright &copy; Latisha Johnson
