@@ -59,6 +59,7 @@ function Create() {
             ref={register({ required: "SELECTION REQUIRED" })}
             onChange={onHandleChange}
           >
+            <option>---Select---</option>
             <option>Boast</option>
             <option>Roast</option>
           </Form.Control>
